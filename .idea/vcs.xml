@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Projects/admin-ecommerce" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Projects/cap-color-configurator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Projects/clothing-store" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Projects/dev-school-site" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Projects/front-ecommerce" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Projects/lawyer-site" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Projects/sneakers-store" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Projects/todo-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/projects/admin-ecommerce" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/projects/cap-color-configurator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/projects/clothing-store" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/projects/dev-school-site" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/projects/front-ecommerce" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/projects/lawyer-site" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/projects/sneakers-store" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/projects/todo-app" vcs="Git" />
+  </component>
+</project>
