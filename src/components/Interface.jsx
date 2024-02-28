@@ -49,16 +49,16 @@ const AboutSection = (props) => {
     const {setSection} = props;
     return (
         <Section mobileTop>
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-snug mt-8 md:mt-12 lg:mt-0">
+            <h1 className="text-2xl md:text-6xl font-extrabold leading-snug mt-2 md:mt-8 lg:mt-0">
                 Hello, I'm
                 <br/>
-                <div className="my-4 bg-white p-4 rounded-xl">
+                <div className="my-2 md:my-4 bg-white p-2 md:p-4 rounded-xl">
                     <span className="px-1 italic">Bohdan</span>
                     <span className="px-1 italic block">Hrabynskyi</span>
                 </div>
             </h1>
             <motion.p
-                className="text-xl text-gray-800 font-bold mt-4"
+                className="text-md md:text-xl text-gray-800 font-bold mt-1 md:mt-4"
                 initial={{
                     opacity: 0,
                     y: 25,
@@ -78,8 +78,8 @@ const AboutSection = (props) => {
             </motion.p>
             <motion.button
                 onClick={() => setSection(3)}
-                className={`bg-indigo-800 text-white py-6 px-10 
-      rounded-lg font-bold text-2xl mt-4 md:mt-16`}
+                className={`bg-indigo-800 text-white py-2 px-4 md:py-6 md:px-10 
+      rounded-lg font-bold text-lg md:text-2xl mt-4 md:mt-16`}
                 initial={{
                     opacity: 0,
                     y: 25,
@@ -227,7 +227,7 @@ const SkillsSection = () => {
                             }}
                         >
                             <motion.h3
-                                className="text-xs md:text-md font-bold text-black p-4 relative"
+                                className="text-xs md:text-md font:medium md:font-black p-4 relative"
                             >
                                 {skill.title}
                             </motion.h3>

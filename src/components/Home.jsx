@@ -10,6 +10,7 @@ import {Interface} from "./Interface";
 import {Menu} from "./Menu";
 
 
+
 function Home(started) {
     const [section, setSection] = useState(0);
     const [menuOpened, setMenuOpened] = useState(false);
@@ -18,7 +19,7 @@ function Home(started) {
         setMenuOpened(false);
     }, [section]);
     return (
-        <>
+        <div className="home-container">
         <MotionConfig
             transition={{
                 ...framerMotionConfig,
@@ -46,7 +47,7 @@ function Home(started) {
             />
         </MotionConfig>
         <Leva hidden />
-        </>
+        </div>
     );
 }
 

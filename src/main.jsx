@@ -1,13 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {BrowserRouter} from 'react-router-dom';
+import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 import App from './App'
 import './index.css'
+import LegalNotice from "./components/LegalNotice";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+
+
+const router = createBrowserRouter([
+    {path: "/", element: <App />},
+    {path: "/legal-notice", element: <LegalNotice />},
+    {path: "/privacy-policy", element: <PrivacyPolicy/>},
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
         <React.StrictMode>
-            <App/>
+            <RouterProvider router={router} />
         </React.StrictMode>
-    </BrowserRouter>
 )
