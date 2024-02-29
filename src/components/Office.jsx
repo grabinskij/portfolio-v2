@@ -11,8 +11,14 @@ export function Office(props) {
 
   const texture = useTexture("textures/lightmap.jpg");
 
-  const textureVSCode = useVideoTexture("textures/code_video.mp4");
-  const textureFireplace = useVideoTexture("textures/fire.mp4");
+  const textureVSCode = useVideoTexture("textures/code_video.mp4", {
+      start: true,
+      unsuspend: 'canplay',
+  });
+  const textureFireplace = useVideoTexture("textures/fire.mp4", {
+      start: true,
+      unsuspend: 'canplay',
+  });
 
   texture.flipY = false;
   texture.encoding = THREE.sRGBEncoding;

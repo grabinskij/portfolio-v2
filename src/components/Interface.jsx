@@ -148,13 +148,6 @@ const skills = [
 
     },
     {
-        title: "ThreeJS",
-        bg: "bg-blue-600",
-        position: {x: '40', y: '220'}
-
-
-    },
-    {
         title: "MongoDB",
         bg: "bg-lime-600",
         position: {x: '40', y: '456'}
@@ -252,16 +245,16 @@ const ProjectsSection = () => {
 
     return (
         <Section>
-            <div className="flex w-full h-full gap-4 md:gap-10 items-center justify-center mt-80">
+            <div className="flex w-full h-full gap-4 md:gap-10 items-center justify-center text-white mt-28 md:mt-72">
                 <button
-                    className="text-sm md:text-xl hover:text-indigo-800 transition-colors"
+                    className="text-xs md:text-xl hover:text-indigo-800 transition-colors"
                     onClick={previousProject}
                 >
                     ← Previous
                 </button>
                 <h2 className="text-xl md:text-6xl font-bold uppercase">Projects</h2>
                 <button
-                    className="text-sm md:text-xl hover:text-indigo-800 transition-colors"
+                    className="text-xs md:text-xl hover:text-indigo-800 transition-colors"
                     onClick={nextProject}
                 >
                     Next →
