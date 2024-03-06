@@ -1,11 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ButtonHome from "./ButtonHome";
 import Header from "./Header";
-
+import {useLocation} from 'react-router-dom';
 
 
 
 const LegalNotice = () => {
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash === '#terms-de') {
+            const termsDeElement = document.getElementById('terms-de');
+            if (termsDeElement) {
+                termsDeElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, [location.hash]);
+
     return (
         <>
             <Header/>

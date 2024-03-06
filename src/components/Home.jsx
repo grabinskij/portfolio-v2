@@ -11,7 +11,7 @@ import {Menu} from "./Menu";
 
 
 
-function Home(started) {
+function Home({started, isButtonVisible, setPopupVisible}) {
     const [section, setSection] = useState(0);
     const [menuOpened, setMenuOpened] = useState(false);
 
@@ -36,7 +36,7 @@ function Home(started) {
                         </Suspense>
                     </Scroll>
                     <Scroll html>
-                        {started && <Interface setSection={setSection} />}
+                        {started && <Interface setSection={setSection} isButtonVisible={isButtonVisible} setPopupVisible={setPopupVisible} />}
                     </Scroll>
                 </ScrollControls>
             </Canvas>

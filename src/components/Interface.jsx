@@ -33,14 +33,14 @@ const Section = (props) => {
 };
 
 export const Interface = (props) => {
-    const {setSection} = props;
+    const {setSection, isButtonVisible, setPopupVisible} = props;
 
     return (
         <div className="flex flex-col flex-end items-center w-screen">
             <AboutSection setSection={setSection}/>
             <SkillsSection/>
             <ProjectsSection/>
-            <ContactSection/>
+            <ContactSection isButtonVisible={isButtonVisible} setPopupVisible={setPopupVisible}/>
         </div>
     );
 };
@@ -264,12 +264,17 @@ const ProjectsSection = () => {
     );
 };
 
-const ContactSection = () => {
+const ContactSection = ({isButtonVisible, setPopupVisible}) => {
     const [state, handleSubmit] = useForm("mpzvqzry");
+
+    const showConsentBanner = () => {
+        setPopupVisible(true);
+    }
+
     return (
         <Section>
-            <h2 className="md:ml-14 text-3xl md:text-5xl font-black">Contact me</h2>
-            <div className="mt-10 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
+            <h2 className="md:ml-14 text-3xl md:text-5xl font-black mt-[-12rem]">Contact me</h2>
+            <div className="mt-4 md:mt-8 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
                 {state.succeeded ? (
                     <p className="text-gray-900 text-center">Thanks for your message!</p>
                 ) : (
@@ -281,7 +286,7 @@ const ContactSection = () => {
                             type="text"
                             name="name"
                             id="name"
-                            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-3"
+                            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-1 md:p-3"
                         />
                         <label
                             htmlFor="email"
@@ -293,7 +298,7 @@ const ContactSection = () => {
                             type="email"
                             name="email"
                             id="email"
-                            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-3"
+                            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-1 md:p-3"
                         />
                         <ValidationError
                             className="mt-1 text-red-500"
@@ -310,18 +315,29 @@ const ContactSection = () => {
                         <textarea
                             name="message"
                             id="message"
-                            className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-3"
+                            className="h-24 md:h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-1 md:p-3"
                         />
                         <ValidationError
                             className="mt-1 text-red-500"
                             errors={state.errors}
                         />
-                        <button
-                            disabled={state.submitting}
-                            className="bg-indigo-800 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 "
-                        >
-                            Submit
-                        </button>
+                        {isButtonVisible ? (
+                                <button
+                                    disabled={state.submitting}
+                                    className="bg-indigo-800 text-white py-3 md:py-4 px-6 md:px-8 rounded-lg font-bold text-md md:text-lg mt-16 "
+                                >
+                                    Submit
+                                </button>
+                            )
+                            :
+                            (
+                                <div>
+                                    <p className="text-red-700 pt-4 text-sm">During submitting, this form uses cookies. To proceed with registration, please accept
+                                        the <span onClick={showConsentBanner} className="cursor-pointer text-blue-500 hover:text-blue-400 underline">cookie usage agreement</span> and other privacy settings.
+                                    </p>
+                                </div>
+                            )
+                        }
                     </form>
                 )}
             </div>
