@@ -33,14 +33,14 @@ const Section = (props) => {
 };
 
 export const Interface = (props) => {
-    const {setSection, isButtonVisible, setPopupVisible} = props;
+    const {setSection, consentGiven, setPopupVisible} = props;
 
     return (
         <div className="flex flex-col flex-end items-center w-screen">
             <AboutSection setSection={setSection}/>
             <SkillsSection/>
             <ProjectsSection/>
-            <ContactSection isButtonVisible={isButtonVisible} setPopupVisible={setPopupVisible}/>
+            <ContactSection consentGiven={consentGiven} setPopupVisible={setPopupVisible}/>
         </div>
     );
 };
@@ -264,7 +264,7 @@ const ProjectsSection = () => {
     );
 };
 
-const ContactSection = ({isButtonVisible, setPopupVisible}) => {
+const ContactSection = ({consentGiven, setPopupVisible}) => {
     const [state, handleSubmit] = useForm("mpzvqzry");
 
     const showConsentBanner = () => {
@@ -321,7 +321,7 @@ const ContactSection = ({isButtonVisible, setPopupVisible}) => {
                             className="mt-1 text-red-500"
                             errors={state.errors}
                         />
-                        {isButtonVisible ? (
+                        {consentGiven ? (
                                 <button
                                     disabled={state.submitting}
                                     className="bg-indigo-800 text-white py-3 md:py-4 px-6 md:px-8 rounded-lg font-bold text-md md:text-lg mt-16 "

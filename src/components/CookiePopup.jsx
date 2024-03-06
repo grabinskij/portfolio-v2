@@ -3,9 +3,9 @@ import {Link} from "react-router-dom";
 import {useLocation} from 'react-router-dom';
 
 
-const CookiePopup = ({setShow, setShowChangeConsent, setPopupVisible, popupVisible, setIsButtonVisible}) => {
+const CookiePopup = ({setShow, setShowChangeConsent, setPopupVisible, popupVisible, setConsentGiven}) => {
     const [language, setLanguage] = useState('English');
-    const [consentGiven, setConsentGiven] = useState(null);
+
 
 
     const location = useLocation();
@@ -56,7 +56,7 @@ const CookiePopup = ({setShow, setShowChangeConsent, setPopupVisible, popupVisib
         setPopupVisible(false);
         setShow(false);
         setShowChangeConsent(true);
-        setIsButtonVisible(true);
+        // setIsButtonVisible(true);
     }
 
     const declineCookies = () => {
@@ -64,7 +64,7 @@ const CookiePopup = ({setShow, setShowChangeConsent, setPopupVisible, popupVisib
         toggleStorage(false);
         setShow(false);
         setShowChangeConsent(true);
-        setIsButtonVisible(false);
+        // setIsButtonVisible(false);
     }
 
     const getCookie = (name) => {

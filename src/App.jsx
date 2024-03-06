@@ -13,16 +13,16 @@ function App() {
     const [showOverlay, setShowOverlay] = useState(false);
     const [showChangeConsent, setShowChangeConsent] = useState(false);
     const [popupVisible, setPopupVisible] = useState(false);
-    const [isButtonVisible, setIsButtonVisible] = useState(false);
-    console.log(showChangeConsent)
+    const [consentGiven, setConsentGiven] = useState(null);
+
     return (
         <>
             <LoadingScreen started={started} setStarted={setStarted}/>
             <Overlay show={showOverlay} />
-            <CookiePopup setIsButtonVisible={setIsButtonVisible} setPopupVisible={setPopupVisible} popupVisible={popupVisible} setShow={setShowOverlay} setShowChangeConsent={setShowChangeConsent}/>
+            <CookiePopup setConsentGiven={setConsentGiven} setPopupVisible={setPopupVisible} popupVisible={popupVisible} setShow={setShowOverlay} setShowChangeConsent={setShowChangeConsent}/>
             <ChangeConsentBanner setShowPopup={setPopupVisible} showChangeConsent={showChangeConsent}/>
             <Header/>
-            <Home started={started} isButtonVisible={isButtonVisible} setPopupVisible={setPopupVisible}/>
+            <Home started={started} consentGiven={consentGiven} setPopupVisible={setPopupVisible}/>
         </>
     );
 }
