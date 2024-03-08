@@ -51,7 +51,7 @@ const AboutSection = (props) => {
     return (
         <Section mobileTop>
             <h1 className="text-2xl md:text-6xl font-extrabold leading-snug mt-2 md:mt-8 lg:mt-0">
-                Hello, I'm
+                Hello, I am
                 <br/>
                 <div className="my-2 md:my-4 bg-white p-2 md:p-4 rounded-xl">
                     <span className="px-1 italic">Bohdan</span>
@@ -73,7 +73,7 @@ const AboutSection = (props) => {
                     delay: 1.5,
                 }}
             >
-                I'm an enthusiastic web developer,
+                I am an enthusiastic web developer,
                 <br/>
                 passionate about crafting websites and apps.
             </motion.p>
@@ -132,6 +132,7 @@ const SkillsSection = ({section}) => {
 
 
     const getRandomPosition = (positions) => {
+        if (!positions) return null;
         const blockWidth = 55;
         const blockHeight = 40;
         const maxAttempts = 100;
@@ -340,3 +341,6 @@ const ContactSection = ({consentGiven, setPopupVisible}) => {
         </Section>
     );
 };
+
+
+
