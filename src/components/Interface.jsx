@@ -2,6 +2,7 @@ import {ValidationError, useForm} from "@formspree/react";
 import {motion} from "framer-motion";
 import {useAtom} from "jotai";
 import {currentProjectAtom, projects} from "./Projects";
+import {useState, useEffect} from "react";
 
 
 const Section = (props) => {
@@ -33,12 +34,12 @@ const Section = (props) => {
 };
 
 export const Interface = (props) => {
-    const {setSection, consentGiven, setPopupVisible} = props;
+    const {setSection, consentGiven, setPopupVisible, section} = props;
 
     return (
         <div className="flex flex-col flex-end items-center w-screen">
             <AboutSection setSection={setSection}/>
-            <SkillsSection/>
+            <SkillsSection section={section}/>
             <ProjectsSection/>
             <ContactSection consentGiven={consentGiven} setPopupVisible={setPopupVisible}/>
         </div>
@@ -100,74 +101,69 @@ const AboutSection = (props) => {
 };
 
 const skills = [
-    {
-        title: "HTML5",
-        bg: "bg-sky-600",
-        position: {x: '91', y: '300'}
-
-    },
-    {
-        title: "CSS3",
-        bg: "bg-purple-600",
-        position: {x: '239', y: '445'}
-
-    },
-    {
-        title: "SCSS",
-        bg: "bg-fuchsia-600",
-        position: {x: '246', y: '295'}
-    },
-    {
-        title: "JavaScript",
-        bg: "bg-red-600",
-        position: {x: '69', y: '159'}
-
-    },
-    {
-        title: "React",
-        bg: "bg-orange-600",
-        position: {x: '180', y: '74'}
-
-    },
-    {
-        title: "Redux",
-        bg: "bg-indigo-600",
-        position: {x: '140', y: '372'}
-    },
-    {
-        title: "REST API",
-        bg: "bg-pink-600",
-        position: {x: '180', y: '150'}
-
-
-    },
-    {
-        title: "NextJS",
-        bg: "bg-violet-600",
-        position: {x: '15', y: '330'}
-
-    },
-    {
-        title: "MongoDB",
-        bg: "bg-lime-600",
-        position: {x: '40', y: '456'}
-
-    },
+    { title: "HTML5", bg: "bg-sky-600" },
+    { title: "CSS3", bg: "bg-purple-600" },
+    { title: "SCSS", bg: "bg-fuchsia-600" },
+    { title: "JavaScript", bg: "bg-red-600" },
+    { title: "React", bg: "bg-orange-600" },
+    { title: "Redux", bg: "bg-indigo-600" },
+    { title: "REST API", bg: "bg-pink-600" },
+    { title: "NextJS", bg: "bg-violet-600" },
+    { title: "MongoDB", bg: "bg-lime-600" },
 ];
 
 
-const SkillsSection = () => {
-    const blockWidth = 55;
-    const blockHeight =40;
+const SkillsSection = ({section}) => {
+    const [positions, setPositions] = useState([])
 
-    const getRandomPosition = () => {
-        const randomX = Math.floor(Math.random() * (100 - blockWidth));
-        const randomY = Math.floor(Math.random() * (100 - blockHeight));
-        return {
-            x: `${randomX}vw`,
-            y: `${randomY}vh`,
-        };
+    const calculatePositions = () => {
+        const newPositions = [];
+        for (const skill of skills) {
+            const newPosition = getRandomPosition(newPositions);
+            newPositions.push(newPosition);
+        }
+        setPositions(newPositions);
     };
+
+    useEffect(() => {
+        calculatePositions();
+    }, [section]);
+
+
+
+    const getRandomPosition = (positions) => {
+        const blockWidth = 55;
+        const blockHeight = 40;
+        const maxAttempts = 100;
+        const minDistance = 15;
+
+        for (let attempt = 0; attempt < maxAttempts; attempt++) {
+            const randomX = Math.floor(Math.random() * (100 - blockWidth));
+            const randomY = Math.floor(Math.random() * (100 - blockHeight));
+            const newPosition = {
+                x: `${randomX}vw`,
+                y: `${randomY}vh`,
+            };
+
+            let isOverlapping = false;
+            for (const position of positions) {
+                const dx = Math.abs(randomX - parseInt(position.x));
+                const dy = Math.abs(randomY - parseInt(position.y));
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < minDistance) {
+                    isOverlapping = true;
+                    break;
+                }
+            }
+
+            if (!isOverlapping) {
+                return newPosition;
+            }
+        }
+
+        return null;
+    };
+
 
     return (
         <Section>
@@ -199,11 +195,11 @@ const SkillsSection = () => {
                             key={index}
                             initial={{
                                 opacity: 0,
-                                ...getRandomPosition(),
+                                ...positions[index],
                             }}
                             animate={{
                                 opacity: 1,
-                                ...getRandomPosition(),
+                                ...positions[index],
                                 transition: {
                                     duration: 1,
                                     delay: 1 + index * 0.2,

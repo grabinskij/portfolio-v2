@@ -36,7 +36,7 @@ function Home({started, consentGiven, setPopupVisible}) {
                         </Suspense>
                     </Scroll>
                     <Scroll html>
-                        {started && <Interface setSection={setSection} consentGiven={consentGiven} setPopupVisible={setPopupVisible} />}
+                        {started && <Interface section={section} setSection={setSection} consentGiven={consentGiven} setPopupVisible={setPopupVisible} />}
                     </Scroll>
                 </ScrollControls>
             </Canvas>
