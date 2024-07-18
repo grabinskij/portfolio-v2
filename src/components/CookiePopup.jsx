@@ -98,9 +98,9 @@ const CookiePopup = ({setShow, setShowChangeConsent, setPopupVisible, popupVisib
                 <div className="fixed text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md z-50 w-11/12 md:max-w-md shadow-2xl">
                     <div>
                         <div className="sticky top-0 left-0 right-0 flex justify-center border-b border-gray-100 p-4 font-bold">
-                            <h2 className="text-sm md:text-lg">{language === 'English' ? 'Cookies and Data Privacy Settings' : 'Cookies und Datenschutzeinstellungen'}</h2>
+                            <h2 className="text-sm lg:text-lg">{language === 'English' ? 'Cookies and Data Privacy Settings' : 'Cookies und Datenschutzeinstellungen'}</h2>
                         </div>
-                        <div className="text-justify px-2 text-xs md:text-sm">
+                        <div className="text-justify px-2 text-xs lg:text-sm">
                             <div className="overflow-y-auto pl-2 pr-4 py-4 max-h-[calc(100vh-400px)]">
                                 {language === 'English' ? (
                                     <>
@@ -187,14 +187,14 @@ const CookiePopup = ({setShow, setShowChangeConsent, setPopupVisible, popupVisib
                             </div>
                         </div>
                         <div className="border-t h-full border-transparent shadow-custom">
-                            <button className="block w-3/4 mx-auto my-4 px-6 py-1 md:py-3 font-semibold rounded-md cursor-pointer bg-red-600 text-white hover:bg-gray-400 hover:text-red-600" onClick={acceptCookies}>
+                            <button className="block w-3/4 mx-auto my-4 px-6 py-1 lg:py-3 font-semibold rounded-md cursor-pointer bg-red-600 text-white hover:bg-gray-400 hover:text-red-600" onClick={acceptCookies}>
                                 {language === 'English' ? 'Accept All' : 'Alle akzeptieren'}
                             </button>
-                            <button className="block w-3/4 mx-auto my-4 px-6 py-1 md:py-3 font-semibold rounded-md cursor-pointer bg-red-600 text-white hover:bg-gray-400 hover:text-red-600" onClick={declineCookies}>
+                            <button className="block w-3/4 mx-auto my-4 px-6 py-1 lg:py-3 font-semibold rounded-md cursor-pointer bg-red-600 text-white hover:bg-gray-400 hover:text-red-600" onClick={declineCookies}>
                                 {language === 'English' ? 'Reject' : 'Ablehnen'}
                             </button>
                         </div>
-                        <div className="sticky text-black text-center p-2 w-full border-t border-gray-100 text-sm md:text-base">
+                        <div className="sticky text-black text-center p-2 w-full border-t border-gray-100 text-sm lg:text-base">
                             <Link to={language === 'English' ? "/legal-notice" : "/legal-notice#terms-de"}
                                   className=" inline-block mx-2 hover:text-gray-600" onClick={closePopup}>
                                 {language === 'English' ? 'Legal Notice' : 'Impressum'}
@@ -204,7 +204,7 @@ const CookiePopup = ({setShow, setShowChangeConsent, setPopupVisible, popupVisib
                                   className=" inline-block mx-2 hover:text-gray-600" onClick={closePopup}>
                                 {language === 'English' ? 'Privacy Policy' : 'Datenschutzerklärung'}
                             </Link>
-                            <button className="inline-block m-2 cursor-pointer border-none rounded-md px-3 py-0.5 md:py-1 bg-red-600 text-white hover:bg-gray-400 hover:text-red-600"
+                            <button className="inline-block m-2 cursor-pointer border-none rounded-md px-3 py-0.5 lg:py-1 bg-red-600 text-white hover:bg-gray-400 hover:text-red-600"
                                     onClick={changeLanguage}>{language === 'English' ? 'DE' : 'ENG'}
                             </button>
                         </div>

@@ -50,16 +50,16 @@ const AboutSection = (props) => {
     const {setSection} = props;
     return (
         <Section mobileTop>
-            <h1 className="text-2xl md:text-6xl font-extrabold leading-snug mt-2 md:mt-8 lg:mt-0">
+            <h1 className="text-2xl lg:text-6xl font-extrabold leading-snug mt-2 md:mt-8 lg:mt-0">
                 Hello, I am
                 <br/>
-                <div className="my-2 md:my-4 bg-white p-2 md:p-4 rounded-xl">
+                <div className="my-2 lg:my-4 bg-white p-2 lg:p-4 rounded-xl">
                     <span className="px-1 italic">Bohdan</span>
                     <span className="px-1 italic block">Hrabynskyi</span>
                 </div>
             </h1>
             <motion.p
-                className="text-md md:text-xl text-gray-800 font-bold mt-1 md:mt-4"
+                className="text-md lg:text-xl text-gray-800 font-bold mt-1 lg:mt-4"
                 initial={{
                     opacity: 0,
                     y: 25,
@@ -79,8 +79,8 @@ const AboutSection = (props) => {
             </motion.p>
             <motion.button
                 onClick={() => setSection(3)}
-                className={`bg-indigo-800 text-white py-2 px-4 md:py-6 md:px-10 
-      rounded-lg font-bold text-lg md:text-2xl mt-4 md:mt-16`}
+                className={`bg-indigo-800 text-white py-2 px-4 lg:py-6 lg:px-10 
+      rounded-lg font-bold text-lg lg:text-2xl mt-4 lg:mt-16`}
                 initial={{
                     opacity: 0,
                     y: 25,
@@ -174,7 +174,7 @@ const SkillsSection = ({section}) => {
                     whileInView={"visible"}
                 >
                     <motion.h2
-                        className="flex p-4 md:p-0 justify-center rounded-xl md:w-96 md:h-20 items-center bg-white md:text-4xl font-extrabold"
+                        className="flex p-4 lg:p-0 justify-center rounded-xl lg:w-96 lg:h-20 items-center bg-white lg:text-4xl font-extrabold"
                         initial={{
                             opacity: 0,
                             y: 25,
@@ -192,7 +192,7 @@ const SkillsSection = ({section}) => {
                     </motion.h2>
                     {skills.map((skill, index) => (
                         <motion.div
-                            className={`md:w-24 md:h-24 w-16 h-16 ${skill.bg} flex justify-center items-center rounded-full bg-opacity-60 absolute`}
+                            className={`lg:w-24 lg:h-24 w-16 h-16 ${skill.bg} flex justify-center items-center rounded-full bg-opacity-60 absolute`}
                             key={index}
                             initial={{
                                 opacity: 0,
@@ -217,7 +217,7 @@ const SkillsSection = ({section}) => {
                             }}
                         >
                             <motion.h3
-                                className="text-xs md:text-md font:medium md:font-black p-4 relative"
+                                className="text-xs lg:text-md font:medium lg:font-black p-4 relative"
                             >
                                 {skill.title}
                             </motion.h3>
@@ -242,16 +242,16 @@ const ProjectsSection = () => {
 
     return (
         <Section>
-            <div className="flex w-full h-full gap-4 md:gap-10 items-center justify-center text-white mt-48 md:mt-72">
+            <div className="flex w-full h-full gap-4 lg:gap-10 items-center justify-center text-white mt-48 lg:mt-72">
                 <button
-                    className="text-xs md:text-xl hover:text-indigo-800 transition-colors"
+                    className="text-xs lg:text-xl hover:text-indigo-800 transition-colors"
                     onClick={previousProject}
                 >
                     ← Previous
                 </button>
-                <h2 className="text-xl md:text-6xl font-bold uppercase">Projects</h2>
+                <h2 className="text-xl lg:text-6xl font-bold uppercase">Projects</h2>
                 <button
-                    className="text-xs md:text-xl hover:text-indigo-800 transition-colors"
+                    className="text-xs lg:text-xl hover:text-indigo-800 transition-colors"
                     onClick={nextProject}
                 >
                     Next →
@@ -270,8 +270,8 @@ const ContactSection = ({consentGiven, setPopupVisible}) => {
 
     return (
         <Section>
-            <h2 className="md:ml-14 text-3xl md:text-5xl font-black mt-[-12rem]">Contact me</h2>
-            <div className="mt-4 md:mt-8 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
+            <h2 className="lg:ml-14 text-2xl lg:text-5xl font-black mt-[-12rem]">Contact me</h2>
+            <div className="mt-4 lg:mt-8 p-6 lg:p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
                 {state.succeeded ? (
                     <p className="text-gray-900 text-center">Thanks for your message!</p>
                 ) : (
@@ -283,7 +283,7 @@ const ContactSection = ({consentGiven, setPopupVisible}) => {
                             type="text"
                             name="name"
                             id="name"
-                            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-1 md:p-3"
+                            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-1 lg:p-3"
                         />
                         <label
                             htmlFor="email"
@@ -295,7 +295,7 @@ const ContactSection = ({consentGiven, setPopupVisible}) => {
                             type="email"
                             name="email"
                             id="email"
-                            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-1 md:p-3"
+                            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-1 lg:p-3"
                         />
                         <ValidationError
                             className="mt-1 text-red-500"
@@ -312,7 +312,7 @@ const ContactSection = ({consentGiven, setPopupVisible}) => {
                         <textarea
                             name="message"
                             id="message"
-                            className="h-24 md:h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-1 md:p-3"
+                            className="h-24 lg:h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-800 p-1 lg:p-3"
                         />
                         <ValidationError
                             className="mt-1 text-red-500"
@@ -321,7 +321,7 @@ const ContactSection = ({consentGiven, setPopupVisible}) => {
                         {consentGiven ? (
                                 <button
                                     disabled={state.submitting}
-                                    className="bg-indigo-800 text-white py-3 md:py-4 px-6 md:px-8 rounded-lg font-bold text-md md:text-lg mt-16 "
+                                    className="bg-indigo-800 text-white py-3 lg:py-4 px-6 lg:px-8 rounded-lg font-bold text-md lg:text-lg mt-4 lg:mt-16"
                                 >
                                     Submit
                                 </button>
