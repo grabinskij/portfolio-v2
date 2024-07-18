@@ -287,7 +287,7 @@ const ContactSection = ({consentGiven, setPopupVisible}) => {
                         />
                         <label
                             htmlFor="email"
-                            className="font-medium text-gray-900 block mb-1 mt-8"
+                            className="font-medium text-gray-900 block mb-1 mt-4 lg:mt-8"
                         >
                             Email
                         </label>
@@ -305,7 +305,7 @@ const ContactSection = ({consentGiven, setPopupVisible}) => {
                         />
                         <label
                             htmlFor="email"
-                            className="font-medium text-gray-900 block mb-1 mt-8"
+                            className="font-medium text-gray-900 block mb-1 mt-4 lg:mt-8"
                         >
                             Message
                         </label>
