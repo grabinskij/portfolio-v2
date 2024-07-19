@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {LoadingScreen} from "./components/LoadingScreen";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -14,11 +14,6 @@ function App() {
     const [showChangeConsent, setShowChangeConsent] = useState(false);
     const [popupVisible, setPopupVisible] = useState(false);
     const [consentGiven, setConsentGiven] = useState(null);
-
-    useEffect(() => {
-        console.log('Debugging starts here in the root component');
-        debugger;
-    }, []);
 
     return (
         <>
