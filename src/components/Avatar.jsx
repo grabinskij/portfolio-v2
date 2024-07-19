@@ -21,10 +21,6 @@ const Avatar = React.memo((props) => {
     "animations/Falling Idle.fbx"
   );
 
-  useEffect(() => {
-    console.log(animation, headFollow);
-  }, [animation, headFollow]);
-
   typingAnimation[0].name = "Typing";
   standingAnimation[0].name = "Standing";
   fallingAnimation[0].name = "Falling";
