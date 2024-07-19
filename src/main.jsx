@@ -13,6 +13,10 @@ const router = createBrowserRouter([
     {path: "/privacy-policy", element: <PrivacyPolicy/>},
 ]);
 
+console.log('Debugging starts here before rendering the app');
+debugger;
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
         <React.StrictMode>
             <RouterProvider router={router} />

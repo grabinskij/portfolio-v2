@@ -174,7 +174,7 @@ const SkillsSection = ({section}) => {
                     whileInView={"visible"}
                 >
                     <motion.h2
-                        className="flex p-4 lg:p-0 justify-center rounded-xl lg:w-96 lg:h-20 items-center bg-white lg:text-4xl font-extrabold"
+                        className="flex mb-2 p-2 lg:p-4 justify-center rounded-br-lg w-24 lg:w-72 lg:h-20 items-center bg-white lg:text-4xl font-extrabold"
                         initial={{
                             opacity: 0,
                             y: 25,
