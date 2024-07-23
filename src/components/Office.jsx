@@ -1,13 +1,13 @@
 import { useGLTF, useTexture, useVideoTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { animate, useMotionValue } from "framer-motion";
-import React, { useEffect,  useMemo } from "react";
+import React, { useEffect } from "react";
 
 import * as THREE from "three";
 
 export function Office(props) {
   const { section } = props;
-  const { nodes, materials } = useGLTF("models/scene.glb");
+  const { nodes } = useGLTF("models/scene.glb");
 
   const texture = useTexture("textures/lightmap.jpg");
 
